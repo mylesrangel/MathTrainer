@@ -10,8 +10,10 @@
 
         android:layout_width="395dp"
         android:layout_height="587dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" >
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/scoreTextView"
@@ -39,16 +41,17 @@
             android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/timerTextView"
-            android:layout_centerHorizontal="true"
             android:padding="15sp"
             android:text="17+16"
             android:textAlignment="center"
             android:textSize="25sp" />
 
         <GridLayout
-            android:layout_width="395dp"
-            android:layout_height="fill_parent"
+            android:id="@+id/multiGridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@id/questionTextView"
+            android:visibility="gone"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp">
 
@@ -57,51 +60,79 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:layout_row="0"
-                android:tag="0"
-                android:layout_gravity="fill"
-                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:text="Button" />
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:onClick="chosenAnswer"
+                android:tag="0"
+                android:text="17" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_row="0"
-                android:tag="1"
-                android:layout_gravity="fill"
-                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:text="Button" />
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:onClick="chosenAnswer"
+                android:tag="1"
+                android:text="33" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:layout_row="1"
-                android:tag="2"
-                android:layout_gravity="fill"
-                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:text="Button" />
+                android:layout_gravity="fill"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:onClick="chosenAnswer"
+                android:tag="2"
+                android:text="22" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_row="1"
-                android:tag="3"
-                android:layout_gravity="fill"
-                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:text="Button" />
+                android:layout_gravity="fill"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:onClick="chosenAnswer"
+                android:tag="3"
+                android:text="77" />
 
         </GridLayout>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/gameOverTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/questionTextView"
+            android:layout_centerHorizontal="true"
+            android:padding="20sp"
+            android:text="Your Score: 10/16"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:onClick="playAgain"
+            android:padding="35sp"
+            android:text="playAgain"
+            android:textSize="25sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
